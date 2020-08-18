@@ -8,7 +8,7 @@ This is a clone of the Discord App UI. By now it has only the components and its
 - TypeScript
 
 ## Available on
-- [Discord UI](discord-ui.netlify.app)
+- [Discord UI](https://discord-ui.netlify.app)
 
 ## Usage
 
