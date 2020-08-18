@@ -1,15 +1,52 @@
 import React from "react";
 
-import { Container, Title, ExpandIcon } from "./styles";
+import { Container, Role, User, Avatar } from "./styles";
 
-const ServerNane: React.FC = () => {
+interface UserProps {
+    nickname: string;
+    isBot?: boolean;
+}
+
+const UserRow: React.FC<UserProps> = ({ nickname, isBot }) => {
+    return (
+        <User>
+            <Avatar className={isBot ? "bot" : ""} />
+
+            <strong>{nickname}</strong>
+
+            {isBot && <span>Bot</span>}
+        </User>
+    );
+};
+
+const UserList: React.FC = () => {
     return (
         <Container>
-            <Title>Frios e Calculistas</Title>
+            <Role>Disponível - 1</Role>
 
-            <ExpandIcon />
+            <UserRow nickname="Gabriel Shelby" />
+
+            <Role>Offline - 18</Role>
+            <UserRow nickname="Matheus Shelby" isBot />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
+            <UserRow nickname="Fulano Shelby" />
         </Container>
     );
 };
 
-export default ServerNane;
+export default UserList;

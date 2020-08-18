@@ -1,36 +1,94 @@
 import styled from "styled-components";
-import { ExpandMore } from "styled-icons/material";
 
 export const Container = styled.div`
+    grid-area: UL;
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 11px 0 16px;
+    flex-direction: column;
+
+    padding: 3px 6px 0 16px;
+
     background-color: var(--secondary);
 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
-    z-index: 2;
+    max-height: calc(100vh - 46px);
+    overflow-y: scroll;
 
-    cursor: pointer;
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
 
-    transition: background-color 0.2s;
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--tertiary);
+        border-radius: 4px;
+    }
 
-    &:hover {
-        background-color: var(--quaternary);
+    ::-webkit-scrollbar-track {
+        background-color: var(--secondary);
     }
 `;
 
-export const Title = styled.h1`
-    font-size: 16px;
-    font-weight: bold;
+export const Role = styled.span`
+    margin-top: 20px;
 
-    color: var(--white);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray);
 `;
 
-export const ExpandIcon = styled(ExpandMore)`
-    width: 28px;
-    height: 28px;
+export const User = styled.div`
+    margin-top: 5px;
+    padding: 5px;
 
-    color: var(--white);
+    display: flex;
+    align-items: center;
+
     cursor: pointer;
+
+    border-radius: 4px;
+
+    background: transparent;
+    transition: background 0.2s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    > strong {
+        margin-left: 13px;
+        font-weight: 500;
+        color: var(--white);
+        opacity: 0.7;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    > span {
+        margin-left: 9px;
+
+        background-color: var(--discord);
+        color: var(--white);
+        border-radius: 4px;
+        padding: 4px 5px;
+
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+    }
+`;
+
+export const Avatar = styled.div`
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: var(--primary);
+    border-radius: 50%;
+
+    &.bot {
+        background-color: var(--mention-detail);
+    }
 `;

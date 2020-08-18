@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Title, ExpandIcon } from "./styles";
 
-const ServerNane: React.FC = () => {
+const ServerName: React.FC = () => {
     return (
         <Container>
             <Title>Frios e Calculistas</Title>
@@ -12,4 +12,4 @@ const ServerNane: React.FC = () => {
     );
 };
 
-export default ServerNane;
+export default ServerName;
